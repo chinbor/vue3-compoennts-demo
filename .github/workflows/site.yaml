@@ -30,7 +30,10 @@ jobs:
       # 每一次都拉最新的包（不取缓存）
       - run: pnpm install --no-frozen-lockfile
 
-      # 构建命令1
+      # 构建命令1（
+      # 因为docs中依赖了ui组件（这一个是使用的tsconfig.json进行的path别名配置），
+      # ui组件button依赖了utils，但是他却是以monorepo包的形式依赖的，然而我们并未对utils打包，所以不存在dist目录，导致找不到导出文件）
+      # 于是乎咱们在这里进行构建
       - run: pnpm utils:build
 
       # 构建命令2
