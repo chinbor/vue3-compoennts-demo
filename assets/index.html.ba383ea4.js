@@ -1,0 +1,1 @@
+import{_ as a,o as c,c as t,a as e,b as n}from"./app.191b9d60.js";const o={},r=e("h1",{id:"zodance-ui",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#zodance-ui","aria-hidden":"true"},"#"),n(" zodance-ui")],-1),d=[r];function s(i,_){return c(),t("div",null,d)}var l=a(o,[["render",s],["__file","index.html.vue"]]);export{l as default};
