@@ -19,10 +19,13 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 16.15.x
       
       - name: Install pnpm
         uses: pnpm/action-setup@v2.0.1
+        with:
+          # 这里不知道怎么回事，合并标签触发流程会报错未获取到版本，但是package.json已经写了packageManager
+          version: 7.5.x
 
       # 每一次都拉最新的包（不取缓存）
       - run: pnpm install --no-frozen-lockfile
@@ -40,5 +43,3 @@ jobs:
         env:
           # @see https://docs.github.com/cn/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      
