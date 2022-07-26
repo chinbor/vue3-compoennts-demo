@@ -30,7 +30,10 @@ jobs:
       # 每一次都拉最新的包（不取缓存）
       - run: pnpm install --no-frozen-lockfile
 
-      # 构建命令
+      # 构建命令1
+      - run: pnpm utils:build
+
+      # 构建命令2
       - run: pnpm docs:build
 
       - name: Deploy to GitHub Pages
