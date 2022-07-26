@@ -7,7 +7,7 @@ import * as navbar from './configs/navbar'
 import * as sidebar from './configs/sidebar'
 
 export default defineUserConfig({
-  base: '/',
+  base: process.env.NODE_ENV === 'production' ? '/vue3-components-demo/' : '/',
   lang: 'zh-CN',
   title: 'zodance-ui',
   description: 'zodance公司的组件库',
