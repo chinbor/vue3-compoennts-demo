@@ -1,6 +1,8 @@
 name: site
 on:
   push:
+    # 通过 git tag site@v0.0.1 打标签
+    # git push origin site@v0.0.1推送到远方触发
     tags:
       - site*
 

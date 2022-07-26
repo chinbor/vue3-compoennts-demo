@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "private": true,
+  "packageManager": "pnpm@7.5.2",
   "scripts": {
     "docs": "nr --filter=site dev",
     "docs:build": "nr --filter=site build",
@@ -10,7 +12,6 @@
     "ui:build": "nr --filter=ui-design build",
     "demo:dev": "nr --filter=demo dev"
   },
-  "packageManager": "pnpm@7.5.0",
   "keywords": [],
   "author": "",
   "license": "ISC",
