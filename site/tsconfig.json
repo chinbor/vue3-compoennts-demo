@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "zodance-ui": ["../packages/ui/src"]
+      "zodance-ui": ["../packages/ui/src/index.ts"],
+      "zodance-ui/style": ["../packages/ui/src/style.ts"]
     }
   },
+  "exclude": ["node_modules"]
 }

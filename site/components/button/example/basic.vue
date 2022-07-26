@@ -3,6 +3,8 @@
 
 <template>
   <div>
-    <ZdButton />
+    <ZdButton type="primary">
+      primary
+    </ZdButton>
   </div>
 </template>

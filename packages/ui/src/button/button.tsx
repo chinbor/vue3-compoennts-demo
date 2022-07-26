@@ -1,11 +1,22 @@
-import { defineComponent } from 'vue'
-import { isString } from '@zodance/utils'
+import { type PropType, computed, defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'ZdButton',
-  setup() {
+  props: {
+    type: {
+      type: String as PropType<'default' | 'primary'>,
+      default: 'default',
+    },
+  },
+  setup(props, { slots }) {
+    const prefixCls = 'zo-button'
+    const cls = computed(() => ({
+      [prefixCls]: true,
+      [`${prefixCls}-${props.type}`]: props.type !== 'default',
+    }))
+
     return () => {
-      return (<button>{isString('我是按钮') ? 'chinbor' : 'fuck'}</button>)
+      return (<button class={cls.value}>{ slots.default && slots.default() }</button>)
     }
   },
 })

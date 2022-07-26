@@ -30,12 +30,23 @@ export default defineUserConfig({
   }),
   bundler: viteBundler({
     viteOptions: {
+      plugins: [vueJsx()],
       resolve: {
         alias: {
-          "zodance-ui": resolve(__dirname, '../../packages/ui/src')
+          "zodance-ui/style": resolve(__dirname, '../../packages/ui/src/style.ts'),
+          "zodance-ui": resolve(__dirname, '../../packages/ui/src/index.ts')
         }
       },
-      plugins: [vueJsx()]
+      // 强制修改(vuepress暗黑模式是通过给html标签增加dark class实现的，我们这里处理less文件将html-dark-selector变量替换为html.dark)
+      css: {
+        preprocessorOptions: {
+          less: {
+            modifyVars: {
+              "html-dark-selector": "~'html.dark'"
+            }
+          }
+        }
+      },
     },
     vuePluginOptions: {},
   }),
