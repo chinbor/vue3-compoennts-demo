@@ -1,0 +1,22 @@
+{
+  "name": "bilibili-vue3-ts-components-monorepo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "docs": "nr --filter=site dev",
+    "docs:build": "nr --filter=site build",
+    "utils:build": "nr --filter=utils build",
+    "ui:build": "nr --filter=ui-design build",
+    "demo:dev": "nr --filter=demo dev"
+  },
+  "packageManager": "pnpm@7.5.0",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@antfu/ni": "^0.17.2",
+    "@mistjs/eslint-config-vue": "^0.0.2",
+    "eslint": "^8.20.0"
+  }
+}
